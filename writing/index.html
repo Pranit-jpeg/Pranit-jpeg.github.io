@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Pranit Choudhary</title>
+  <meta name="description" content="Referee reports, research critiques, and short essays on labor economics and applied method.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    .writing-intro {
+      max-width: var(--measure);
+      margin: 0 auto 1.5rem;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .year-mark {
+      max-width: var(--measure);
+      margin: 3rem auto 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .year-mark .year {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--accent);
+      font-variation-settings: "opsz" 144;
+      letter-spacing: -0.01em;
+    }
+    .year-mark .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 0.5rem;
+    }
+    .year-mark .count {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead r-1" role="banner">
+      <span class="folio">Vol. I · No. 01</span>
+      <span class="motto">A personal dispatch from 42.34° N, 71.09° W</span>
+      <span class="issue">Mon., April 20, 2026</span>
+    </header>
+
+    <nav class="nav r-2" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about/index.html">About</a>
+      <a href="../work/index.html">Work</a>
+      <a href="../writing/index.html" class="here">Writing</a>
+      <a href="../cv/index.html">CV</a>
+    </nav>
+
+    <header class="page-head r-3">
+      <p class="eyebrow">Writing</p>
+      <h1>Referee reports, critiques, replications.</h1>
+      <p class="dek">
+        Written at the intersection of applied econometrics and the
+        papers I couldn&rsquo;t stop arguing with. Each PDF opens in a
+        new tab.
+      </p>
+    </header>
+
+    <p class="writing-intro r-4">
+      Most of these began as coursework and outgrew it. If you&rsquo;d
+      rather read one over the others, I&rsquo;d point to the CFMN
+      critique &mdash; it&rsquo;s the fullest expression of how I read a
+      paper.
+    </p>
+
+    <section class="r-5">
+      <div class="year-mark">
+        <span class="year">2025</span>
+        <span class="rule"></span>
+        <span class="count">3 pieces</span>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <a class="teaser" href="../assets/writing-samples/review-cfmn-2025-demographics-real-rates.pdf" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Review &amp; Critique · Macro</span>
+              <span class="date">8 pages</span>
+            </div>
+            <h3>Review of Carvalho, Ferrero, Mazin &amp; Nechio (2025) &mdash; demographics and real interest rates</h3>
+            <p class="tdek">
+              A structured critique of CFMN&rsquo;s open-economy life-cycle
+              model and panel ECM. Main concerns: Θ is not exogenous in
+              the way the empirics assume (it co-moves with the savings
+              glut, safe-asset shortage, and Basel II); the 1.45 long-run
+              elasticity on the global rate is mechanically biased by a
+              weighted-average-of-the-LHS construction; the Kao test is
+              invalid under cross-sectional dependence. Three named
+              extensions: EU accession as staggered DiD, China&rsquo;s WTO
+              entry as an integration shock, pension reforms as IV.
+            </p>
+            <span class="tarrow">Read the PDF &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="teaser" href="../assets/writing-samples/referee-report-garrett-ohrn-suarez-serrato-2020.pdf" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Referee Report · Labor / Public</span>
+              <span class="date">2 pages</span>
+            </div>
+            <h3>Comment on Garrett, Ohrn &amp; Suárez Serrato (2020) &mdash; tax policy and local labor markets</h3>
+            <p class="tdek">
+              A tight referee-style read of the authors&rsquo; DiD
+              evaluation of federal bonus depreciation. Flags SUTVA
+              violations from commuting and firm reallocation; the
+              two-way fixed-effects with continuous treatment problem;
+              the absence of heterogeneity analysis across industries
+              and worker types; and the distributional implications of
+              the employment&ndash;earnings disconnect.
+            </p>
+            <span class="tarrow">Read the PDF &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="teaser" href="../assets/writing-samples/rdd-religious-composition-replication.pdf" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Replication · Applied Econometrics</span>
+              <span class="date">6 pages</span>
+            </div>
+            <h3>Religious composition and political outcomes: a fuzzy spatial RDD replication</h3>
+            <p class="tdek">
+              Replicates Basten &amp; Betz (2013) with a fuzzy spatial
+              regression discontinuity design using the historical
+              Protestant&ndash;Catholic border in Switzerland as an
+              instrument for Protestant share. First-stage coefficient
+              0.393 (SE 0.014) across 192 municipalities; includes
+              reduced-form plots, 2SLS estimates, and an explicit
+              discussion of local randomisation, continuity, and
+              instrument validity.
+            </p>
+            <span class="tarrow">Read the PDF &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="colophon">
+      <p>
+        Set in Fraunces &amp; IBM Plex <span class="pop">·</span>
+        <a href="../index.html">Return to the front page</a> <span class="pop">·</span>
+        <a href="../work/index.html">Work index</a>
+      </p>
+      <span class="small">© Pranit Choudhary 2026 · No cookies, no trackers, no paywalls.</span>
+    </footer>
+
+  </main>
+</body>
+</html>

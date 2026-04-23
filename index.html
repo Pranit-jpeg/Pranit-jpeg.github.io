@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranit Choudhary — Economist-in-training</title>
+  <meta name="description" content="Personal site of Pranit Choudhary. MS Economics, Northeastern University. Labor markets, policy evaluation, and the data infrastructure behind both.">
+  <meta name="author" content="Pranit Choudhary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* ── nameplate (home only) ───────────────────────────────── */
+    .nameplate {
+      padding: 4rem 0 1.5rem;
+      text-align: center;
+      border-bottom: 3px double var(--ink);
+      position: relative;
+    }
+    .nameplate h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-variation-settings: "opsz" 144, "SOFT" 30;
+      font-size: clamp(3rem, 10vw, 7.25rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      display: inline-block;
+      position: relative;
+      cursor: help;
+      padding-bottom: 0.25rem;
+    }
+    .nameplate h1 .tooltip {
+      position: absolute;
+      bottom: calc(100% + 0.6rem);
+      left: 50%;
+      transform: translate(-50%, 8px);
+      background: var(--ink);
+      color: var(--bg);
+      padding: 0.7rem 1.1rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+      border-radius: 2px;
+      box-shadow: 0 8px 24px rgba(26,26,26,0.18);
+    }
+    .nameplate h1 .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--ink);
+      border-bottom: 0;
+    }
+    .nameplate h1 .tooltip .phonetic { color: var(--pop); letter-spacing: 0.14em; font-weight: 500; margin-right: 0.45rem; }
+    .nameplate h1 .tooltip .rhyme { text-transform: none; letter-spacing: 0; font-family: var(--display); font-style: italic; font-size: 13px; color: var(--bg-warm); }
+    .nameplate h1:hover .tooltip,
+    .nameplate h1:focus .tooltip,
+    .nameplate h1.is-tapped .tooltip {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    .nameplate .standfirst {
+      margin-top: 1.25rem;
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    /* ── lede (home) ─────────────────────────────────────────── */
+    .lede {
+      max-width: var(--measure);
+      margin: 4.5rem auto 3rem;
+      position: relative;
+    }
+    .lede p.body {
+      font-family: var(--display);
+      font-size: 1.45rem;
+      line-height: 1.38;
+      font-weight: 400;
+      color: var(--ink);
+      hanging-punctuation: first last;
+    }
+    .lede p.body::first-letter {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 4.8rem;
+      line-height: 0.85;
+      float: left;
+      padding: 0.45rem 0.7rem 0 0;
+      color: var(--accent);
+      font-variation-settings: "opsz" 144;
+    }
+    .lede em { font-style: italic; }
+    .lede .byline {
+      margin-top: 1.75rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lede .byline .dot { color: var(--pop); margin: 0 0.6em; }
+
+    /* ── currently ───────────────────────────────────────────── */
+    .currently {
+      max-width: var(--measure);
+      margin: 3.5rem auto;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.75rem 0 0.75rem;
+    }
+    .currently h2 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .currently ul { list-style: none; }
+    .currently li {
+      display: grid;
+      grid-template-columns: 6rem 1fr auto;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      align-items: baseline;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .currently li:last-child { border-bottom: 0; }
+    .currently .label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .currently .link a {
+      font-family: var(--display);
+      font-size: 1.12rem;
+      line-height: 1.28;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+      transition: color 150ms ease, border-color 150ms ease;
+    }
+    .currently .link a:hover { color: var(--pop); border-bottom-color: var(--pop); }
+    .currently .meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── NOW dispatch box ────────────────────────────────────── */
+    .now {
+      max-width: var(--measure);
+      margin: 4.5rem auto 2rem;
+      border: 1px solid var(--ink);
+      background: var(--bg);
+      position: relative;
+    }
+    .now::before {
+      content: '· NOW · A DISPATCH ·';
+      position: absolute;
+      top: -0.65rem;
+      left: 1.6rem;
+      background: var(--bg);
+      padding: 0 0.65rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--ink);
+    }
+    .now dl {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 1rem 1.5rem;
+      padding: 2rem 1.9rem 1.7rem;
+    }
+    .now dt {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      padding-top: 0.35rem;
+    }
+    .now dd {
+      font-family: var(--display);
+      font-size: 1.02rem;
+      line-height: 1.5;
+    }
+    .now dd em { color: var(--accent); font-style: italic; }
+
+    @media (max-width: 820px) {
+      .lede { margin-top: 3rem; }
+      .lede p.body { font-size: 1.25rem; }
+      .lede p.body::first-letter { font-size: 3.8rem; padding-right: 0.55rem; }
+    }
+    @media (max-width: 560px) {
+      .nameplate { padding-top: 2.5rem; }
+      .currently li { grid-template-columns: 1fr; gap: 0.25rem; padding: 0.9rem 0; }
+      .currently .meta { display: none; }
+      .now dl { grid-template-columns: 1fr; gap: 0.15rem 0; padding: 1.75rem 1.3rem 1.3rem; }
+      .now dt { padding-top: 0.8rem; }
+      .now dt:first-child { padding-top: 0; }
+      .nameplate h1 .tooltip { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead r-1" role="banner">
+      <span class="folio">Vol. I · No. 01</span>
+      <span class="motto">A personal dispatch from 42.34° N, 71.09° W</span>
+      <span class="issue">Mon., April 20, 2026</span>
+    </header>
+
+    <section class="nameplate r-2" aria-label="Name">
+      <h1 tabindex="0" aria-describedby="pronoun-tip">
+        Pranit Choudhary<span class="tooltip" id="pronoun-tip" role="tooltip"><span class="phonetic">PRUH-neet</span><span class="rhyme">rhymes with &ldquo;elite&rdquo;</span></span>
+      </h1>
+      <p class="standfirst">Economist-in-training. Writer. Part-time data janitor.</p>
+    </section>
+
+    <nav class="nav r-3" aria-label="Primary">
+      <a href="index.html" class="here">Home</a>
+      <a href="about/index.html">About</a>
+      <a href="work/index.html">Work</a>
+      <a href="writing/index.html">Writing</a>
+      <a href="cv/index.html">CV</a>
+    </nav>
+
+    <article class="lede r-4" aria-label="Introduction">
+      <p class="kicker">From the desk</p>
+      <p class="body">
+        I study the labor market &mdash; not the <em>one</em> labor market the
+        textbooks flatten, but the messy patchwork of them: sponsorship
+        rules, discontinuous incentives, the frictions nobody models
+        because they live inside HR software. I like econometric honesty,
+        well-labeled axes, and the parts of a policy memo most people skip.
+      </p>
+      <p class="byline">
+        Pranit Choudhary <span class="dot">·</span> MS Economics, Northeastern <span class="dot">·</span> Graduating May 2026
+      </p>
+    </article>
+
+    <section class="currently r-5" aria-label="Currently">
+      <h2>Currently</h2>
+      <ul>
+        <li>
+          <span class="label">Project</span>
+          <span class="link"><a href="work/jobpipeline/index.html">JobPipeline &mdash; a local scraper that scores postings against four tailored résumés</a></span>
+          <span class="meta">Apr '26 · in progress</span>
+        </li>
+        <li>
+          <span class="label">Writing</span>
+          <span class="link"><a href="assets/writing-samples/review-cfmn-2025-demographics-real-rates.pdf" target="_blank" rel="noopener">Review of Carvalho, Ferrero, Mazin &amp; Nechio (2025) on demographics and real rates</a></span>
+          <span class="meta">8 pp · PDF</span>
+        </li>
+        <li>
+          <span class="label">Reading</span>
+          <span class="link"><a href="https://www.aeaweb.org/articles?id=10.1257/aer.109.4.1197" target="_blank" rel="noopener">Blanchard &mdash; Public Debt and Low Interest Rates (AER 2019)</a></span>
+          <span class="meta">re-reading</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="now r-6" aria-label="Now">
+      <dl>
+        <dt>Reading</dt>
+        <dd>Blanchard (2019) on <em>Public Debt and Low Interest Rates</em>, and, less respectably, every FRED chart that loads before I remember I had work.</dd>
+
+        <dt>Listening</dt>
+        <dd><em>Odd Lots</em> &mdash; the episode on regional-bank deposits. <em>Planet Money</em> when walking to class.</dd>
+
+        <dt>Thinking about</dt>
+        <dd>Whether the empirics in the r-star literature can actually identify demographics as separable from the safe-asset shortage, or whether the two move together in all the variation we have.</dd>
+
+        <dt>Open to</dt>
+        <dd>Research analyst, economic consulting, and policy-evaluation roles in Boston, DC, or NYC starting summer 2026.</dd>
+      </dl>
+    </section>
+
+    <footer class="colophon r-7" role="contentinfo">
+      <p>
+        Set in Fraunces &amp; IBM Plex <span class="pop">·</span>
+        Hand-built in Boston <span class="pop">·</span>
+        <a href="mailto:pranitchoudhary17dec@gmail.com">Email</a> ·
+        <a href="https://github.com/Pranit-jpeg" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/pranit-choudhary-744ba5216" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <span class="small">© Pranit Choudhary 2026 · No cookies, no trackers, no paywalls.</span>
+    </footer>
+
+  </main>
+
+  <script>
+    (function () {
+      const h1 = document.querySelector('.nameplate h1');
+      if (!h1) return;
+      h1.addEventListener('click', (e) => { e.preventDefault(); h1.classList.toggle('is-tapped'); });
+      document.addEventListener('click', (e) => { if (!h1.contains(e.target)) h1.classList.remove('is-tapped'); });
+      h1.addEventListener('keydown', (e) => { if (e.key === 'Escape') h1.classList.remove('is-tapped'); });
+    })();
+  </script>
+</body>
+</html>

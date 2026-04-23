@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Pranit Choudhary</title>
+  <meta name="description" content="About Pranit Choudhary: where I come from, what I work on, and what I care about in the research process.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    .by-the-numbers {
+      max-width: var(--measure);
+      margin: 3rem auto;
+      border: 1px solid var(--ink);
+      background: var(--bg);
+      padding: 2rem 1.9rem 1.5rem;
+      position: relative;
+    }
+    .by-the-numbers::before {
+      content: '· BY THE NUMBERS ·';
+      position: absolute;
+      top: -0.65rem;
+      left: 1.6rem;
+      background: var(--bg);
+      padding: 0 0.65rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--ink);
+    }
+    .by-the-numbers ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem 1.75rem;
+    }
+    .by-the-numbers li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .by-the-numbers .stat {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--accent);
+      font-variation-settings: "opsz" 144;
+    }
+    .by-the-numbers .stat .unit {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 0.25rem;
+    }
+    .by-the-numbers .caption {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .off-clock {
+      max-width: var(--measure);
+      margin: 3rem auto;
+      padding: 2rem 0 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .off-clock h2 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pop);
+      margin-bottom: 1.1rem;
+    }
+    .off-clock ul { list-style: none; }
+    .off-clock li {
+      padding: 0.75rem 0;
+      border-bottom: 1px dotted var(--rule);
+      font-family: var(--display);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .off-clock li:last-child { border-bottom: 0; }
+    .off-clock .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    .off-clock em { color: var(--accent); font-style: italic; }
+
+    @media (max-width: 560px) {
+      .by-the-numbers ul { grid-template-columns: 1fr; gap: 1.1rem; }
+      .off-clock li { grid-template-columns: 1fr; gap: 0.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead r-1" role="banner">
+      <span class="folio">Vol. I · No. 01</span>
+      <span class="motto">A personal dispatch from 42.34° N, 71.09° W</span>
+      <span class="issue">Mon., April 20, 2026</span>
+    </header>
+
+    <nav class="nav r-2" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about/index.html" class="here">About</a>
+      <a href="../work/index.html">Work</a>
+      <a href="../writing/index.html">Writing</a>
+      <a href="../cv/index.html">CV</a>
+    </nav>
+
+    <header class="page-head r-3">
+      <p class="eyebrow">About</p>
+      <h1>A short version and a long one.</h1>
+      <p class="dek">
+        Who I am, what I work on, and the small editorial obsessions
+        I&rsquo;d rather admit to up-front than have you discover in a meeting.
+      </p>
+    </header>
+
+    <article class="prose prose-lede r-4">
+      <p>
+        <strong>Short version:</strong> I&rsquo;m a second-year MS Economics
+        student at Northeastern University, graduating in May 2026. I came to
+        Boston from India in 2024 for graduate school, and I&rsquo;m looking
+        for research, consulting, and policy-evaluation roles where the work
+        starts before the regression does &mdash; in the data, the
+        sample-selection notes, the weird footnote on page forty of the codebook.
+      </p>
+
+      <h2>Where I come from</h2>
+      <p>
+        I grew up in India and studied economics at NMIMS Mumbai before
+        moving to Northeastern in 2024. My early training was heavier on
+        theory than most American programs &mdash; lots of chalkboard
+        optimization, less Stata &mdash; which turned out to be a
+        strange gift. I learned to be suspicious of clean numbers before
+        I learned to produce them.
+      </p>
+      <p>
+        Coming to the US shifted the question. Theory asks <em>what should
+        the parameter be?</em> Applied work asks <em>is this sample even the
+        population you think it is?</em> Most of my interesting mistakes
+        since have lived at that seam.
+      </p>
+
+      <h2>What I&rsquo;m working on</h2>
+      <p>
+        Most recently I was a Research &amp; Evaluation Fellow at the City
+        of Boston&rsquo;s Department of Innovation &amp; Technology, where
+        I ran two difference-in-differences evaluations: the first on the
+        MBTA fare-free bus pilot (a million-plus stop-level observations
+        across 145 routes), the second on Boston Family Days, testing
+        for chilling effects in non-English-speaking households after the
+        program expanded from BPS to all K&ndash;12 schools. I also
+        benchmarked the city&rsquo;s labor-market performance against
+        six peer metros for the economic outlook deck.
+      </p>
+      <p>
+        Alongside the fellowship, my coursework has leaned labor and
+        applied micro &mdash; and my writing shows it. The two pieces I
+        point people to first are a
+        <a href="../assets/writing-samples/review-cfmn-2025-demographics-real-rates.pdf" target="_blank" rel="noopener">review and critique</a>
+        of Carvalho, Ferrero, Mazin &amp; Nechio (2025) on demographics
+        and real interest rates, and a
+        <a href="../assets/writing-samples/referee-report-garrett-ohrn-suarez-serrato-2020.pdf" target="_blank" rel="noopener">referee report</a>
+        on Garrett, Ohrn &amp; Suárez Serrato (2020, AER Insights) on
+        bonus depreciation and local labor markets. The more technical
+        work lives on
+        <a href="https://github.com/Pranit-jpeg" target="_blank" rel="noopener">GitHub</a>:
+        end-to-end replications of Card (1990), Dube et al., and
+        Thistlethwaite&ndash;Campbell (1960); a full
+        Berry&ndash;Levinsohn&ndash;Pakes random-coefficients logit with
+        a Nevo-style cereal-market application; and an unsupervised-ML
+        portfolio that includes a DBSCAN implementation I&rsquo;m
+        quietly proud of. I use R and Stata for actual analysis, Python
+        for anything that touches a pipeline or a PDF, and LaTeX for
+        anything I want a second person to read. I know enough SQL to
+        be dangerous and not enough to be paid for it &mdash; a gap I
+        am fixing this summer.
+      </p>
+      <p>
+        On the side, I build small research infrastructure &mdash; the
+        kind of unglamorous tooling that makes a study reproducible six
+        months later. The most recent of these is
+        <a href="../work/jobpipeline/index.html">JobPipeline</a>, a local
+        SQLite-backed queue that scrapes corporate career pages, scores
+        each posting against four tailored résumés using the Claude API,
+        and drops anything under a 75&thinsp;% match. It is the single
+        most-used program on my laptop.
+      </p>
+
+      <h2>How I work</h2>
+      <p>
+        A few operating commitments, for anyone hiring me or collaborating:
+      </p>
+      <ul>
+        <li>I don&rsquo;t trust a model I can&rsquo;t rebuild from scratch in forty minutes.</li>
+        <li>I redraw every chart at least once. Usually three times.</li>
+        <li>Stata for pedagogy, R for actual work, Python for everything else.</li>
+        <li>I read the codebook before I load the data. This is not normal; it should be.</li>
+        <li>I&rsquo;d rather ship a small, clearly-labeled finding than a large one with a haunted standard error.</li>
+      </ul>
+
+      <blockquote class="pull">
+        &ldquo;The interesting stuff is almost never where the regression is &mdash;
+        it&rsquo;s two footnotes earlier, in the decision about which rows
+        to drop.&rdquo;
+      </blockquote>
+
+      <h2>What&rsquo;s next</h2>
+      <p>
+        I&rsquo;m on F-1 / OPT, graduating in May 2026, and looking for
+        full-time roles starting summer 2026 in research analysis, economic
+        consulting, or policy evaluation &mdash; Boston, DC, or NYC ideally,
+        remote-friendly otherwise. If your team does careful applied work
+        and you&rsquo;d rather have someone who writes clearly about a
+        specification choice than someone who runs eight more,
+        I&rsquo;d love to hear from you.
+      </p>
+    </article>
+
+    <aside class="by-the-numbers r-5" aria-label="By the numbers">
+      <ul>
+        <li>
+          <span class="stat">19<span class="unit">months</span></span>
+          <span class="caption">Total professional experience, counted generously</span>
+        </li>
+        <li>
+          <span class="stat">4<span class="unit">résumés</span></span>
+          <span class="caption">Tailored variants maintained in parallel</span>
+        </li>
+        <li>
+          <span class="stat">3<span class="unit">languages</span></span>
+          <span class="caption">English, Hindi, Stata</span>
+        </li>
+        <li>
+          <span class="stat">0<span class="unit">ad-hoc Excel files</span></span>
+          <span class="caption">Pledged for the 2026 calendar year</span>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="off-clock r-6" aria-label="Off the clock">
+      <h2>Off the clock</h2>
+      <ul>
+        <li><span class="k">Cooking</span><span>Anything involving lentils, over-ambitiously.</span></li>
+        <li><span class="k">Walking</span><span>Along the Charles, usually while pretending I&rsquo;m thinking about the dissertation proposal.</span></li>
+        <li><span class="k">Watching</span><span>Test cricket, and occasionally the BLS JOLTS release as if it were sports.</span></li>
+        <li><span class="k">Avoiding</span><span>Group chats about crypto. Dashboards with pie charts.</span></li>
+        <li><span class="k">Currently bad at</span><span>Waking up early enough to see FRED update.</span></li>
+      </ul>
+    </section>
+
+    <footer class="colophon r-7" role="contentinfo">
+      <p>
+        Set in Fraunces &amp; IBM Plex <span class="pop">·</span>
+        <a href="../index.html">Return to the front page</a> <span class="pop">·</span>
+        <a href="mailto:pranitchoudhary17dec@gmail.com">Email</a>
+      </p>
+      <span class="small">© Pranit Choudhary 2026 · No cookies, no trackers, no paywalls.</span>
+    </footer>
+
+  </main>
+</body>
+</html>

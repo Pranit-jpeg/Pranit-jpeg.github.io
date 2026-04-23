@@ -1,0 +1,348 @@
+/* ─────────────────────────────────────────────────────────────
+   Pranit Choudhary — shared stylesheet
+   Editorial / publication feel: Fraunces + IBM Plex.
+   Loaded by every page. Page-specific components are inline.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg:        #F8F5EE;
+  --bg-warm:   #F1ECE0;
+  --ink:       #1A1A1A;
+  --muted:     #6B6257;
+  --rule:      rgba(26, 26, 26, 0.14);
+  --rule-soft: rgba(26, 26, 26, 0.08);
+  --accent:    #6B2028;   /* burgundy */
+  --pop:       #C8553D;   /* terracotta */
+
+  --display: 'Fraunces', 'Times New Roman', Georgia, serif;
+  --sans:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono:    'IBM Plex Mono', 'SF Mono', 'Menlo', monospace;
+
+  --measure: 34rem;
+  --page:    64rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding: 2rem 2rem 4rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+  z-index: 1;
+}
+
+.page {
+  max-width: var(--page);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+a { color: inherit; }
+::selection { background: var(--accent); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--pop); outline-offset: 4px; border-radius: 2px; }
+
+/* ── masthead ───────────────────────────────────────────────── */
+.masthead {
+  padding: 0.4rem 0 1.4rem;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.masthead .folio { justify-self: start; }
+.masthead .motto {
+  justify-self: center;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.masthead .issue { justify-self: end; }
+
+/* ── nav ────────────────────────────────────────────────────── */
+nav.nav {
+  padding: 1rem 0 1.1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.75rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+nav.nav a {
+  text-decoration: none;
+  color: var(--ink);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+nav.nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+nav.nav a.here  { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── kicker (small-caps section labels) ─────────────────────── */
+.kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pop);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid currentColor;
+  width: fit-content;
+  margin-bottom: 1.25rem;
+}
+.kicker.ink { color: var(--ink); }
+.kicker.accent { color: var(--accent); }
+.kicker.plain { border-bottom: 0; padding-bottom: 0; }
+
+/* ── page heading (for inner pages) ─────────────────────────── */
+.page-head {
+  max-width: var(--measure);
+  margin: 4rem auto 2.5rem;
+  text-align: left;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1.25rem;
+}
+.page-head .eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pop);
+  margin-bottom: 0.85rem;
+}
+.page-head h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.page-head .dek {
+  margin-top: 1rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 30rem;
+}
+
+/* ── long-form prose ───────────────────────────────────────── */
+.prose {
+  max-width: var(--measure);
+  margin: 0 auto 2.5rem;
+  font-family: var(--display);
+  font-size: 1.08rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+.prose > p + p { margin-top: 1.1rem; }
+.prose h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin: 2.5rem 0 0.85rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.prose h3 {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pop);
+  margin: 2rem 0 0.6rem;
+}
+.prose em { font-style: italic; }
+.prose strong { font-weight: 600; color: var(--accent); }
+.prose a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; transition: color 150ms ease, border-color 150ms ease; }
+.prose a:hover { color: var(--pop); border-bottom-color: var(--pop); }
+.prose ul, .prose ol { margin: 1rem 0 1rem 1.4rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--bg-warm);
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+}
+.prose blockquote.pull {
+  margin: 2.5rem -1.5rem;
+  padding: 1.25rem 1.75rem;
+  border-left: 3px solid var(--pop);
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.35;
+  color: var(--accent);
+}
+
+.prose-lede p:first-of-type::first-letter {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 4.2rem;
+  line-height: 0.85;
+  float: left;
+  padding: 0.45rem 0.7rem 0 0;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144;
+}
+
+/* ── teaser list (Work / Writing indexes) ───────────────────── */
+.teaser-list {
+  max-width: var(--measure);
+  margin: 0 auto;
+  list-style: none;
+}
+.teaser {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 180ms ease;
+}
+.teaser:last-child { border-bottom: 0; }
+.teaser:hover { background: var(--bg-warm); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; }
+.teaser .tlabel {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pop);
+  margin-bottom: 0.65rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+}
+.teaser .tlabel .date { color: var(--muted); letter-spacing: 0.12em; }
+.teaser h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+  transition: color 150ms ease;
+}
+.teaser:hover h3 { color: var(--accent); }
+.teaser .tdek {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.teaser .tarrow {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: transform 180ms ease;
+}
+.teaser:hover .tarrow { transform: translateX(4px); }
+
+/* ── colophon / footer ─────────────────────────────────────── */
+.colophon {
+  max-width: var(--measure);
+  margin: 3rem auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.9;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+.colophon a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.colophon a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.colophon .pop { color: var(--pop); margin: 0 0.3em; }
+.colophon .small { display: block; margin-top: 0.5rem; font-size: 9.5px; letter-spacing: 0.12em; }
+
+/* ── animation ─────────────────────────────────────────────── */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.r-1 { animation: rise 700ms ease-out both; }
+.r-2 { animation: rise 700ms 80ms  ease-out both; }
+.r-3 { animation: rise 700ms 160ms ease-out both; }
+.r-4 { animation: rise 700ms 260ms ease-out both; }
+.r-5 { animation: rise 700ms 360ms ease-out both; }
+.r-6 { animation: rise 700ms 460ms ease-out both; }
+.r-7 { animation: rise 700ms 540ms ease-out both; }
+.r-8 { animation: rise 700ms 620ms ease-out both; }
+.r-9 { animation: rise 700ms 700ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ── responsive base ───────────────────────────────────────── */
+@media (max-width: 820px) {
+  .masthead { grid-template-columns: 1fr; gap: 0.4rem; text-align: center; }
+  .masthead .folio, .masthead .issue { justify-self: center; }
+  nav.nav { gap: 1.4rem; flex-wrap: wrap; }
+  .page-head { margin-top: 2.5rem; }
+  .prose { font-size: 1rem; }
+  .prose blockquote.pull { margin: 2rem 0; font-size: 1.2rem; }
+  .teaser:hover { margin: 0; padding-left: 0; padding-right: 0; }
+}
+@media (max-width: 560px) {
+  body { padding: 1.25rem 1.25rem 3rem; font-size: 16px; }
+  .page-head h1 { font-size: 2.2rem; }
+  .teaser h3 { font-size: 1.3rem; }
+  .prose-lede p:first-of-type::first-letter { font-size: 3.4rem; padding-right: 0.55rem; }
+}

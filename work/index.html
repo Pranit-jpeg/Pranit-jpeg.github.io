@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Pranit Choudhary</title>
+  <meta name="description" content="Selected projects and research by Pranit Choudhary — econometric replications, structural demand estimation, machine learning, and research infrastructure.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    .work-intro {
+      max-width: var(--measure);
+      margin: 0 auto 2rem;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .section-rule {
+      max-width: var(--measure);
+      margin: 3rem auto 1.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.9rem;
+    }
+    .section-rule h2 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .section-rule .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead r-1" role="banner">
+      <span class="folio">Vol. I · No. 01</span>
+      <span class="motto">A personal dispatch from 42.34° N, 71.09° W</span>
+      <span class="issue">Mon., April 20, 2026</span>
+    </header>
+
+    <nav class="nav r-2" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about/index.html">About</a>
+      <a href="../work/index.html" class="here">Work</a>
+      <a href="../writing/index.html">Writing</a>
+      <a href="../cv/index.html">CV</a>
+    </nav>
+
+    <header class="page-head r-3">
+      <p class="eyebrow">Work</p>
+      <h1>Selected projects &amp; applied research.</h1>
+      <p class="dek">
+        Policy-evaluation fieldwork, econometric replications, structural
+        demand estimation, unsupervised machine learning, and the
+        research infrastructure that makes the rest of it possible.
+      </p>
+    </header>
+
+    <p class="work-intro r-4">
+      Grouped by what the work is, not when it happened. Each teaser
+      links to a writeup, a notebook, or the underlying GitHub folder.
+    </p>
+
+    <section aria-label="Policy evaluation" class="r-5">
+      <div class="section-rule">
+        <h2>Policy Evaluation</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <div class="teaser" style="cursor: default;">
+            <div class="tlabel">
+              <span>Fellowship · City of Boston DoIT</span>
+              <span class="date">Sep&ndash;Dec 2025</span>
+            </div>
+            <h3>Fare-free bus pilot &amp; Family Days &mdash; two DiD frameworks for the City of Boston</h3>
+            <p class="tdek">
+              As Research &amp; Evaluation Fellow at the City&rsquo;s
+              Department of Innovation and Technology: a
+              difference-in-differences evaluation of the fare-free MBTA
+              bus pilot across 25 routes, using 1M+ stop-level ridership
+              observations (2017&ndash;2024); a separate
+              triple-interaction DiD on Boston Family Days participation
+              to test for chilling effects in non-English-speaking and
+              East Boston households.
+            </p>
+            <span class="tarrow">Public writeup pending city clearance</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-label="Applied econometrics" class="r-6">
+      <div class="section-rule">
+        <h2>Applied Econometrics</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <a class="teaser" href="https://github.com/Pranit-jpeg/Applied-data-analytics-in-economics/tree/main/causal-inference-replications" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Replications · Identification</span>
+              <span class="date">2025&ndash;26</span>
+            </div>
+            <h3>Four canonical identification papers, replicated end-to-end</h3>
+            <p class="tdek">
+              Card (1990) on the Mariel Boatlift and immigrant wage
+              effects; Dube, Lester &amp; Reich on minimum-wage spillovers
+              at state borders; Thistlethwaite &amp; Campbell (1960) &mdash;
+              the original regression-discontinuity paper; plus the
+              Basten &amp; Betz (2013) fuzzy spatial RDD. One folder,
+              each as a self-contained notebook with the data, the
+              specification, and a short interpretation of the result.
+            </p>
+            <span class="tarrow">Notebooks on GitHub &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="teaser" href="../assets/writing-samples/rdd-religious-composition-replication.pdf" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Econometrics · Replication writeup</span>
+              <span class="date">2025</span>
+            </div>
+            <h3>Religious composition and political outcomes: a fuzzy spatial RDD replication</h3>
+            <p class="tdek">
+              A standalone six-page writeup of the Basten &amp; Betz (2013)
+              replication, framed as a writing sample. First-stage
+              discontinuity 0.393 (SE 0.014) across 192 municipalities,
+              R²&thinsp;=&thinsp;0.949; includes 2SLS estimates and an
+              explicit discussion of local randomisation, continuity, and
+              instrument validity.
+            </p>
+            <span class="tarrow">Read the PDF &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-label="Structural econometrics" class="r-7">
+      <div class="section-rule">
+        <h2>Structural Econometrics &amp; IO</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <a class="teaser" href="https://github.com/Pranit-jpeg/Applied-data-analytics-in-economics/tree/main/demand-estimation-io" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Structural · Demand Estimation</span>
+              <span class="date">2026</span>
+            </div>
+            <h3>BLP &amp; Nevo &mdash; random-coefficients discrete-choice demand on differentiated products</h3>
+            <p class="tdek">
+              The canonical Berry-Levinsohn-Pakes (1995) random-coefficients
+              logit demand system, implemented alongside a nested logit
+              and a Nevo-style (2000) application to the ready-to-eat
+              cereal market. The set includes a plain random-utility
+              baseline, a nested logit, the full BLP estimator, and the
+              Nevo instrument strategy &mdash; the four notebooks that
+              together map the standard IO demand-estimation toolkit.
+            </p>
+            <span class="tarrow">Notebooks on GitHub &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-label="Machine learning" class="r-8">
+      <div class="section-rule">
+        <h2>Machine Learning &amp; Unsupervised Methods</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <a class="teaser" href="https://github.com/Pranit-jpeg/Unsupervised-ML-Data-Mining" target="_blank" rel="noopener">
+            <div class="tlabel">
+              <span>Coursework · DS5230 Northeastern</span>
+              <span class="date">2025&ndash;26</span>
+            </div>
+            <h3>An unsupervised-learning portfolio &mdash; from custom DBSCAN to topic models</h3>
+            <p class="tdek">
+              Twelve notebooks covering the standard unsupervised toolkit
+              and a few non-standard ones: a from-scratch DBSCAN paired
+              with UMAP on MNIST, FashionMNIST, and 20&thinsp;Newsgroups;
+              KMeans, GMM, and the EM algorithm implemented by hand; t-SNE
+              dimensionality reduction; LDA and NMF topic modeling on news
+              corpora; Gibbs and MCMC sampling; collaborative filtering
+              on MovieLens; Girvan&ndash;Newman community detection on
+              academic citation networks.
+            </p>
+            <span class="tarrow">Repository on GitHub &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-label="Research infrastructure" class="r-9">
+      <div class="section-rule">
+        <h2>Research Infrastructure</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="teaser-list">
+        <li>
+          <a class="teaser" href="jobpipeline/index.html">
+            <div class="tlabel">
+              <span>Engineering</span>
+              <span class="date">April 2026</span>
+            </div>
+            <h3>JobPipeline &mdash; a local machine for filtering noise</h3>
+            <p class="tdek">
+              A SQLite-backed queue that scrapes corporate career pages,
+              scores each posting against four tailored résumés using
+              the Claude API, and auto-deletes anything below a
+              75&thinsp;% match. Filters 180+ postings per run into 60-ish
+              worth reading. Python, Flask, cron.
+            </p>
+            <span class="tarrow">Read the case &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="colophon">
+      <p>
+        Set in Fraunces &amp; IBM Plex <span class="pop">·</span>
+        <a href="../index.html">Return to the front page</a> <span class="pop">·</span>
+        <a href="../writing/index.html">Writing index</a>
+      </p>
+      <span class="small">© Pranit Choudhary 2026 · No cookies, no trackers, no paywalls.</span>
+    </footer>
+
+  </main>
+</body>
+</html>
