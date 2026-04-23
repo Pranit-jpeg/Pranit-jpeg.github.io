@@ -228,7 +228,7 @@ nav.nav a.here  { color: var(--accent); border-bottom-color: var(--accent); }
   font-variation-settings: "opsz" 144;
 }
 
-/* ── teaser list (Work / Writing indexes) ───────────────────── */
+/* ── teaser list (Research / Writing indexes) ───────────────── */
 .teaser-list {
   max-width: var(--measure);
   margin: 0 auto;
